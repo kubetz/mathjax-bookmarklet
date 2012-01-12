@@ -34,7 +34,7 @@ javascript:(function() {
     
             /* configuration for MathJax */
             /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
-            config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'\\(\',\'\\)\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
+            config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
     
             /* include the configuration with the script */
             if (window.opera) {
