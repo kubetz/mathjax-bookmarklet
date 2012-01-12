@@ -1,6 +1,6 @@
 javascript:(function() {
 
-    var frames = document.getElementsByTagName('iframe'), script, index, win;
+    var frames = document.getElementsByTagName('iframe'), index, win;
 
     /* execute MathJax on the window object */
     executeMathJax(window);
@@ -20,31 +20,27 @@ javascript:(function() {
     /* insert the MathJax script dynamically into the document */
     function insertScript(doc) {
 
-        var config;
+        var script, config;
 
-        /* don't create script for each window */
-        if (script === undefined) {
-            
-            script = doc.createElement('script');
-    
-            script.type = 'text/javascript';
-    
-            /* see http://www.mathjax.org/resources/faqs/#problem-https */
-            script.src = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
-    
-            /* configuration for MathJax */
-            /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
-            config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
-    
-            /* include the configuration with the script */
-            if (window.opera) {
-                script.innerHTML = config;
-            } else {
-                script.text = config;
-            }                    
-        }
+        script = doc.createElement('script');
 
-        doc.getElementsByTagName('head')[0].appendChild(script.cloneNode(true));
+        script.type = 'text/javascript';
+
+        /* see http://www.mathjax.org/resources/faqs/#problem-https */
+        script.src = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
+
+        /* configuration for MathJax */
+        /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
+        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
+
+        /* include the configuration with the script */
+        if (window.opera) {
+            script.innerHTML = config;
+        } else {
+            script.text = config;
+        }                    
+
+        doc.getElementsByTagName('head')[0].appendChild(script);
     }
 
     /* execute MathJax for given window */
