@@ -1,59 +1,65 @@
 javascript:(function() {
 
-	/* execute MathJax on the window object */
-	executeMathJax(window);
+    var frames = document.getElementsByTagName('iframe'), script, index, win;
 
-	/* try to execute MathJax on every iframe */
-	for (var i = 0, frames = document.getElementsByTagName('iframe'); i < frames.length; i++) {
+    /* execute MathJax on the window object */
+    executeMathJax(window);
 
-		var win = frames[i].contentWindow || frames[i].contentDocument;
+    /* try to execute MathJax on every iframe */
+    for (index = 0; index < frames.length; index++) {
 
-		if (!win.document) {
-			win = win.parentNode;
-		}
+        win = frames[index].contentWindow || frames[index].contentDocument;
 
-		executeMathJax(win);
-	}
+        if (!win.document) {
+            win = win.parentNode;
+        }
 
-	/* insert the MathJax script dynamically into the document */
-	function insertScript(doc) {
+        executeMathJax(win);
+    }
 
-		var script = doc.createElement('script');
+    /* insert the MathJax script dynamically into the document */
+    function insertScript(doc) {
 
-		script.type = 'text/javascript';
+        var config;
 
-		/* see http://www.mathjax.org/resources/faqs/#problem-https */
-		script.src = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
+        /* don't create script for each window */
+        if (script === undefined) {
+            
+            script = doc.createElement('script');
+    
+            script.type = 'text/javascript';
+    
+            /* see http://www.mathjax.org/resources/faqs/#problem-https */
+            script.src = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
+    
+            /* configuration for MathJax */
+            /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
+            config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'\\(\',\'\\)\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
+    
+            /* include the configuration with the script */
+            if (window.opera) {
+                script.innerHTML = config;
+            } else {
+                script.text = config;
+            }                    
+        }
 
-		/* configuration for MathJax */
-		/* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
-		var config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'\\(\',\'\\)\']],processEscapes: true}});MathJax.Hub.Startup.onload();';
+        doc.getElementsByTagName('head')[0].appendChild(script.cloneNode(true));
+    }
 
-		/* include the configuration with the script */
-		if (window.opera) {
-			script.innerHTML = config;
-		} else {
-			script.text = config;
-		}
+    /* execute MathJax for given window */
+    function executeMathJax(win) {
 
-		doc.getElementsByTagName('head')[0].appendChild(script);
-	}
+        if (win.MathJax === undefined) {
 
-	/* execute MathJax for given window */
+            /* insert the script into document if MathJax global doesn't exist for given window */
+            insertScript(win.document);
 
-	function executeMathJax(win) {
+        } else {
 
-		if (win.MathJax === undefined) {
-
-			/* insert the script into document if MathJax global doesn't exist for given window */
-			insertScript(win.document);
-
-		} else {
-
-			/* using win.Array instead of [] to get "instanceof Array" check working inside iframe */
-			/* see http://www.mathjax.org/docs/1.1/typeset.html */
-			win.MathJax.Hub.Queue(new win.Array("Typeset", win.MathJax.Hub));
-
-		}
-	}
+            /* using win.Array instead of [] to get "instanceof Array" check working inside iframe */
+            /* see http://www.mathjax.org/docs/1.1/typeset.html */
+            win.MathJax.Hub.Queue(new win.Array("Typeset", win.MathJax.Hub));
+        }
+    }
 })();
