@@ -1,11 +1,11 @@
 javascript:(function() {
 
-	var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
 
     /* insert the MathJax script dynamically into the document */
 	/* also insert a fix for Google+, until fixed upstream in MathJax */
     function insertScript(doc) {
 	
+		var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
 		var style=doc.createElement('style');
 		style.innerText = googleFix;
 		try {

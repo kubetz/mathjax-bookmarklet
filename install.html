@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MathJax Bookmarklet</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+
+	<style>
+		#bookmarklet {
+			display: block;
+
+			padding: 10px;
+
+			margin-left: auto;
+			margin-right: auto;
+
+			border: solid 1px #CCC;
+
+			-webkit-box-shadow: 1px 1px 5px #999;
+		       -moz-box-shadow: 1px 1px 5px #999;
+		            box-shadow: 1px 1px 5px #999;
+
+			-webkit-border-radius: 1.9em;
+			   -moz-border-radius: 1.9em;
+			        border-radius: 1.9em;
+		}
+
+		.prettyprint {
+			background-color: #fefbf3;
+  			padding: 9px;
+  			border: 1px solid rgba(0,0,0,.2);
+
+ 			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  			   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+ 			        box-shadow: 0 1px 2px rgba(0,0,0,.1);
+		}
+
+		#install {
+			margin-top: 5px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="page-header">
+				<h1>MathJax Bookmarklet</h1>
+			</div>
+			<div class="span8">
+				<p>
+					<a href="https://github.com/dzejkej/mathjax-bookmarklet">MathJax Bookmarklet</a> is a bookmarklet for rendering Tex/LaTeX and MathML notation on pages dynamically using
+					<a href="http://www.mathjax.org/">MathJax</a> library.
+				</p>
+				<p>
+					LaTeX notation is rendered only when delimitated by <code>$</code>.
+				</p>
+			</div>
+			<div class="span8">
+				<a href="javascript:(function(){function e(e){var t='.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}',n=e.createElement('style');n.innerText=t;try{n.textContent=t}catch(r){}e.getElementsByTagName('body')[0].appendChild(n);var i=e.createElement('script'),s;i.src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js',i.type='text/javascript',s='MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();',window.opera?i.innerHTML=s:i.text=s,e.getElementsByTagName('head')[0].appendChild(i)}function t(t){t.MathJax===undefined?e(t.document):t.MathJax.Hub.Queue(new t.Array('Typeset',t.MathJax.Hub))}var n=document.getElementsByTagName('iframe'),r,i;t(window);for(r=0;r<n.length;r++)i=n[r].contentWindow||n[r].contentDocument,i.document||(i=i.parentNode),t(i)})();">
+					<img id="bookmarklet" src="http://www.mathjax.org/wp-content/themes/mathjax/images/logo.gif" alt="MathJax">
+				</a>
+				<div id="install"><em>Drag&amp;Drop to your bookmarks (righ-click under older IE)!</em></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="page-header">
+				<h2>Examples <small>Execute the bookmarklet and enjoy!</small></h2>
+			</div>
+			<div class="span8">
+				<h3 class="page-header">LaTeX Examples</h3>
+				<h4>The Cauchy-Schwarz Inequality</h4>
+				<div class="prettyprint">
+					$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$
+				</div>
+				<h4>Maxwell’s Equations</h4>
+				<div class="prettyprint">
+					$\begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}$
+				</div>
+				<h4>An Identity of Ramanujan</h4>
+				<div class="prettyprint code">
+					$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }$
+				</div>
+			</div>
+			<div class="span8">
+				<h3 class="page-header">MathML Examples</h3>
+				<h4>Curl of a Vector Field</h4>
+				<div class="prettyprint">
+					<math display="block"><mrow><mover accent="true"><mrow><mo>∇</mo></mrow><mrow><mo>→</mo></mrow></mover><mo>×</mo><mover accent="true"><mrow><mi>F</mi></mrow><mrow><mo>→</mo></mrow></mover><mo>=</mo><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>y</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>z</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant="bold" mathsize="normal"><mrow><mi>i</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>z</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant="bold" mathsize="normal"><mrow><mi>j</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mo>∂</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>∂</mo><mi>y</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant="bold" mathsize="normal"><mrow><mi>k</mi></mrow></mstyle></mrow></math>
+				</div>
+				<h4>Definition of Christoffel Symbols</h4>
+				<div class="prettyprint">
+					<math display="block"><mrow><msup><mrow><mo>(</mo><msub><mrow><mo>∇</mo></mrow><mrow><mi>X</mi></mrow></msub><mi>Y</mi><mo>)</mo></mrow><mrow><mi>k</mi></mrow></msup><mo>=</mo><msup><mrow><mi>X</mi></mrow><mrow><mi>i</mi></mrow></msup><msup><mrow><mo stretchy="false">(</mo><msub><mrow><mo>∇</mo></mrow><mrow><mi>i</mi></mrow></msub><mi>Y</mi><mo stretchy="false">)</mo></mrow><mrow><mi>k</mi></mrow></msup><mo>=</mo><msup><mrow><mi>X</mi></mrow><mrow><mi>i</mi></mrow></msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><msup><mrow><mi>Y</mi></mrow><mrow><mi>k</mi></mrow></msup></mrow><mrow><mo>∂</mo><msup><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msup></mrow></mfrac><mo>+</mo><msubsup><mrow><mi>Γ</mi></mrow><mrow><mi>i</mi><mi>m</mi></mrow><mrow><mi>k</mi></mrow></msubsup><msup><mrow><mi>Y</mi></mrow><mrow><mi>m</mi></mrow></msup><mo>)</mo></mrow></mrow></math>
+				</div>
+				<h4>Standard Deviation</h4>
+				<div class="prettyprint code">
+					<math display="block"><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><mstyle displaystyle="true"><mrow><munderover><mrow><mo>∑</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></munderover><mrow><msup><mrow><mo stretchy="false">(</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>−</mo><mi>μ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></mrow></mstyle></mrow></msqrt><mo>.</mo></mrow></math>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
