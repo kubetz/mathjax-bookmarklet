@@ -1,7 +1,18 @@
 javascript:(function() {
 
+	var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
+
     /* insert the MathJax script dynamically into the document */
+	/* also insert a fix for Google+, until fixed upstream in MathJax */
     function insertScript(doc) {
+	
+		var style=doc.createElement('style');
+		style.innerText = googleFix;
+		try {
+			style.textContent = googleFix;
+		}catch(e) {}
+		doc.getElementsByTagName('body')[0].appendChild(style);
+		
         var script = doc.createElement('script'), config;
 
         /* see http://www.mathjax.org/resources/faqs/#problem-https */
