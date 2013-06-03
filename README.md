@@ -7,4 +7,6 @@ Pages don't have to include mathjax.js. Library is included and configured dynam
 
 *Note: This bookmarklet will also try to render math notation inside iframes. This will be successfully executed only on iframes on the same domain because cross-domain policy don't support modification of iframe content from other domains*.
 
-Install the bookmarklet **[HERE](http://dzejkej.github.com/mathjax-bookmarklet/)**.
+Minify the bookmarklet from bookmarklet.js by using `uglifyjs bookmarklet.js -m`. (with UglifyJS2)
+
+Install the bookmarklet **[HERE](http://checkmyworking.com/misc/mathjax-bookmarklet/)**.

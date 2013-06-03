@@ -1,11 +1,22 @@
-javascript:(function() {
+(function() {
+
 
     /* insert the MathJax script dynamically into the document */
+	/* also insert a fix for Google+, until fixed upstream in MathJax */
     function insertScript(doc) {
+	
+		var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
+		var style=doc.createElement('style');
+		style.innerText = googleFix;
+		try {
+			style.textContent = googleFix;
+		}catch(e) {}
+		doc.getElementsByTagName('body')[0].appendChild(style);
+		
         var script = doc.createElement('script'), config;
 
         /* see http://www.mathjax.org/resources/faqs/#problem-https */
-        script.src = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
+        script.src = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';
         script.type = 'text/javascript';
 
         /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
