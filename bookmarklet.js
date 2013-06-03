@@ -1,4 +1,4 @@
-javascript:(function() {
+(function() {
 
 
     /* insert the MathJax script dynamically into the document */
@@ -16,7 +16,7 @@ javascript:(function() {
         var script = doc.createElement('script'), config;
 
         /* see http://www.mathjax.org/resources/faqs/#problem-https */
-        script.src = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js';
+        script.src = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';
         script.type = 'text/javascript';
 
         /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
