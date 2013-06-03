@@ -50,18 +50,17 @@
 			</div>
 			<div class="span8">
 				<p>
-					<a href="https://github.com/dzejkej/mathjax-bookmarklet">MathJax Bookmarklet</a> is a bookmarklet for rendering Tex/LaTeX and MathML notation on pages dynamically using
-					<a href="http://www.mathjax.org/">MathJax</a> library.
+					<a href="https://github.com/christianp/mathjax-bookmarklet">MathJax Bookmarklet</a> is a bookmarklet for rendering Tex/LaTeX, MathML and AsciiMathML notation on pages dynamically using the <a href="http://www.mathjax.org/">MathJax</a> library.
 				</p>
 				<p>
-					LaTeX notation is rendered only when delimitated by <code>$</code>.
+					LaTeX notation is rendered only when delimited by <code>$</code>, or display maths between <code>\[</code> and <code>\]</code>.
 				</p>
 			</div>
 			<div class="span8">
 				<a href="javascript:(function(){function e(e){var t='.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';var a=e.createElement('style');a.innerText=t;try{a.textContent=t}catch(n){}e.getElementsByTagName('body')[0].appendChild(a);var i=e.createElement('script'),o;i.src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';i.type='text/javascript';o='MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';if(window.opera)i.innerHTML=o;else i.text=o;e.getElementsByTagName('head')[0].appendChild(i)}function t(t){if(t.MathJax===undefined){e(t.document)}else{t.MathJax.Hub.Queue(new t.Array('Typeset',t.MathJax.Hub))}}var a=document.getElementsByTagName('iframe'),n,i;t(window);for(n=0;n<a.length;n++){i=a[n].contentWindow||a[n].contentDocument;if(!i.document)i=i.parentNode;t(i)}})();">
 					<img id="bookmarklet" src="http://www.mathjax.org/wp-content/themes/mathjax/images/logo.gif" alt="MathJax">
 				</a>
-				<div id="install"><em>Drag&amp;Drop to your bookmarks (righ-click under older IE)!</em></div>
+				<div id="install"><em>Drag&amp;Drop to your bookmarks (right-click under older IE)!</em></div>
 			</div>
 		</div>
 		<div class="row">
@@ -106,8 +105,7 @@
 		</div>
 		<div class="row">
 			<div class="span8">
-				<h3 class="page-header">AsciiMathML Examples</h3>
-				<h4>Something</h4>
+				<h3 class="page-header">AsciiMathML Example</h3>
 				<div class="prettyprint code">
 					Solving the quadratic equation.
 					Suppose `a x^2+b x+c=0` and `a!=0`. We first divide by `\a` to get `x^2+b/a x+c/a=0`. 
