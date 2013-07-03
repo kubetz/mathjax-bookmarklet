@@ -50,18 +50,17 @@
 			</div>
 			<div class="span8">
 				<p>
-					<a href="https://github.com/dzejkej/mathjax-bookmarklet">MathJax Bookmarklet</a> is a bookmarklet for rendering Tex/LaTeX and MathML notation on pages dynamically using
-					<a href="http://www.mathjax.org/">MathJax</a> library.
+					<a href="https://github.com/christianp/mathjax-bookmarklet">MathJax Bookmarklet</a> is a bookmarklet for rendering Tex/LaTeX, MathML and AsciiMathML notation on pages dynamically using the <a href="http://www.mathjax.org/">MathJax</a> library.
 				</p>
 				<p>
-					LaTeX notation is rendered only when delimitated by <code>$</code>.
+					LaTeX notation is rendered only when delimited by <code>$</code>, or display maths between <code>\[</code> and <code>\]</code>.
 				</p>
 			</div>
 			<div class="span8">
-				<a href="javascript:(function(){function a(a){var b=a.createElement('script'),c;b.src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js',b.type='text/javascript',c='MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();',window.opera?b.innerHTML=c:b.text=c,a.getElementsByTagName('head')[0].appendChild(b)}function b(b){b.MathJax===undefined?a(b.document):b.MathJax.Hub.Queue(new b.Array('Typeset',b.MathJax.Hub))}var c=document.getElementsByTagName('iframe'),d,e;b(window);for(d=0;d<c.length;d++)e=c[d].contentWindow||c[d].contentDocument,e.document||(e=e.parentNode),b(e)})()">
+				<a href="javascript:(function(){function e(e){var t='.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';var a=e.createElement('style');a.innerText=t;try{a.textContent=t}catch(n){}e.getElementsByTagName('body')[0].appendChild(a);var i=e.createElement('script'),o;i.src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';i.type='text/javascript';o='MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';if(window.opera)i.innerHTML=o;else i.text=o;e.getElementsByTagName('head')[0].appendChild(i)}function t(t){if(t.MathJax===undefined){e(t.document)}else{t.MathJax.Hub.Queue(new t.Array('Typeset',t.MathJax.Hub))}}var a=document.getElementsByTagName('iframe'),n,i;t(window);for(n=0;n<a.length;n++){i=a[n].contentWindow||a[n].contentDocument;if(!i.document)i=i.parentNode;t(i)}})();">
 					<img id="bookmarklet" src="http://www.mathjax.org/wp-content/themes/mathjax/images/logo.gif" alt="MathJax">
 				</a>
-				<div id="install"><em>Drag&amp;Drop to your bookmarks (righ-click under older IE)!</em></div>
+				<div id="install"><em>Drag&amp;Drop to your bookmarks (right-click under older IE)!</em></div>
 			</div>
 		</div>
 		<div class="row">
@@ -101,6 +100,22 @@
 				<h4>Standard Deviation</h4>
 				<div class="prettyprint code">
 					<math display="block"><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><mstyle displaystyle="true"><mrow><munderover><mrow><mo>∑</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></munderover><mrow><msup><mrow><mo stretchy="false">(</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>−</mo><mi>μ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></mrow></mstyle></mrow></msqrt><mo>.</mo></mrow></math>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span8">
+				<h3 class="page-header">AsciiMathML Example</h3>
+				<div class="prettyprint code">
+					Solving the quadratic equation.
+					Suppose `a x^2+b x+c=0` and `a!=0`. We first divide by `\a` to get `x^2+b/a x+c/a=0`. 
+
+					Then we complete the square and obtain `x^2+b/a x+(b/(2a))^2-(b/(2a))^2+c/a=0`. 
+					The first three terms factor to give `(x+b/(2a))^2=(b^2)/(4a^2)-c/a`.
+					Now we take square roots on both sides and get `x+b/(2a)=+-sqrt((b^2)/(4a^2)-c/a)`.
+
+					Finally we move the `b/(2a)` to the right and simplify to get 
+					the two solutions: `x_(1,2)=(-b+-sqrt(b^2-4a c))/(2a)`
 				</div>
 			</div>
 		</div>
