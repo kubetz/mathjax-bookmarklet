@@ -4,7 +4,7 @@
     <title>MathJax Bookmarklet</title>
 	<meta charset="utf-8" />
 
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 	<style>
 		#bookmarklet {
@@ -57,7 +57,7 @@
 				</p>
 			</div>
 			<div class="span8">
-				<a href="javascript:(function(){function e(e){var t='.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';var a=e.createElement('style');a.innerText=t;try{a.textContent=t}catch(n){}e.getElementsByTagName('body')[0].appendChild(a);var i=e.createElement('script'),o;i.src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';i.type='text/javascript';o='MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';if(window.opera)i.innerHTML=o;else i.text=o;e.getElementsByTagName('head')[0].appendChild(i)}function t(t){if(t.MathJax===undefined){e(t.document)}else{t.MathJax.Hub.Queue(new t.Array('Typeset',t.MathJax.Hub))}}var a=document.getElementsByTagName('iframe'),n,i;t(window);for(n=0;n<a.length;n++){i=a[n].contentWindow||a[n].contentDocument;if(!i.document)i=i.parentNode;t(i)}})();">
+				<a href="javascript:(function(){function e(k){var f=".MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}";var i=k.createElement("style");i.innerText=f;try{i.textContent=f}catch(j){}k.getElementsByTagName("body")[0].appendChild(i);var g=k.createElement("script"),h;g.src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js";g.type="text/javascript";h='MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["\\\\[","\\\\]"]],processEscapes:true}});MathJax.Hub.Startup.onload();';if(window.opera){g.innerHTML=h}else{g.text=h}k.getElementsByTagName("head")[0].appendChild(g)}function b(f){if(f.MathJax===undefined){e(f.document)}else{f.MathJax.Hub.Queue(new f.Array("Typeset",f.MathJax.Hub))}}var d=document.getElementsByTagName("iframe"),a,c;b(window);for(a=0;a<d.length;a++){c=d[a].contentWindow||d[a].contentDocument;if(!c.document){c=c.parentNode}b(c)}})();">
 					<img id="bookmarklet" src="http://www.mathjax.org/wp-content/themes/mathjax/images/logo.gif" alt="MathJax">
 				</a>
 				<div id="install"><em>Drag&amp;Drop to your bookmarks (right-click under older IE)!</em></div>
