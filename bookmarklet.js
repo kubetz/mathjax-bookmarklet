@@ -19,8 +19,8 @@
         script.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';
         script.type = 'text/javascript';
 
-        /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
-        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["\\\\[","\\\\]"]],processEscapes:true}});MathJax.Hub.Startup.onload();';
+        /* see http://docs.mathjax.org/en/v1.1-latest/options/tex2jax.html */
+        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';
 
         if (window.opera) script.innerHTML = config; else script.text = config;
 
