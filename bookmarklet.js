@@ -6,11 +6,11 @@
     function insertScript(doc) {
 	
 		var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
-		var style=doc.createElement('style');
+		var style = doc.createElement('style');
 		style.innerText = googleFix;
 		try {
 			style.textContent = googleFix;
-		}catch(e) {}
+		} catch(e) {}
 		doc.getElementsByTagName('body')[0].appendChild(style);
 		
         var script = doc.createElement('script'), config;
