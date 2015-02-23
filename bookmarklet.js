@@ -2,16 +2,16 @@
 
 
     /* insert the MathJax script dynamically into the document */
-	/* also insert a fix for Google+, until fixed upstream in MathJax */
+    /* also insert a fix for Google+, until fixed upstream in MathJax */
     function insertScript(doc) {
 	
-		var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
-		var style=doc.createElement('style');
-		style.innerText = googleFix;
-		try {
-			style.textContent = googleFix;
-		}catch(e) {}
-		doc.getElementsByTagName('body')[0].appendChild(style);
+        var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
+        var style = doc.createElement('style');
+        style.innerText = googleFix;
+        try {
+            style.textContent = googleFix;
+        } catch(e) {}
+        doc.getElementsByTagName('body')[0].appendChild(style);
 		
         var script = doc.createElement('script'), config;
 
@@ -19,8 +19,8 @@
         script.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML.js';
         script.type = 'text/javascript';
 
-        /* see http://www.mathjax.org/docs/1.1/options/tex2jax.html */
-        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"],["$$, "$$"]],displayMath:[["\\\\[","\\\\]"]],processEscapes:true}});MathJax.Hub.Startup.onload();';
+        /* see http://docs.mathjax.org/en/v1.1-latest/options/tex2jax.html */
+        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'$$\', \'$$\']]],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';
 
         if (window.opera) script.innerHTML = config; else script.text = config;
 
