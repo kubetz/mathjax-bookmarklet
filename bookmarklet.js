@@ -1,9 +1,9 @@
-(function() {
+ (function() {
 
 
     /* insert the MathJax script dynamically into the document */
     /* also insert a fix for Google+, until fixed upstream in MathJax */
-    function insertScript(doc) {
+  function insertScript(doc) {
 	
         var googleFix = '.MathJax .mn {background: inherit;} .MathJax .mi {color: inherit;} .MathJax .mo {background: inherit;}';
         var style = doc.createElement('style');
@@ -20,7 +20,7 @@
         script.type = 'text/javascript';
 
         /* see http://docs.mathjax.org/en/v1.1-latest/options/tex2jax.html */
-        config = 'MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'$$\', \'$$\']]],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true}});MathJax.Hub.Startup.onload();';
+        config = 'MathJax.Ajax.config.path[\'Contrib\']=\'//cdn.mathjax.org/mathjax/contrib\';MathJax.Hub.Config({extensions:[\'[Contrib]/xyjax/xypic.js\'], tex2jax:{inlineMath:[[\'$\',\'$\'],[\'$$\', \'$$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true},TeX:{extensions: [\'ypic.js\']}});MathJax.Hub.Startup.onload();';
 
         if (window.opera) script.innerHTML = config; else script.text = config;
 
