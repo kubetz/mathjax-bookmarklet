@@ -1,4 +1,4 @@
- (function() {
+(function() {
 
 
     /* insert the MathJax script dynamically into the document */
