@@ -20,7 +20,7 @@
         script.type = 'text/javascript';
 
         /* see http://docs.mathjax.org/en/v1.1-latest/options/tex2jax.html */
-        config = 'MathJax.Ajax.config.path[\'Contrib\']=\'//cdn.mathjax.org/mathjax/contrib\';MathJax.Hub.Config({extensions:[\'[Contrib]/xyjax/xypic.js\'], tex2jax:{inlineMath:[[\'$\',\'$\'],[\'$$\', \'$$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true},TeX:{extensions: [\'ypic.js\']}});MathJax.Hub.Startup.onload();';
+        config = 'MathJax.Ajax.config.path[\'Contrib\']=\'//cdn.mathjax.org/mathjax/contrib\';MathJax.Hub.Config({tex2jax:{inlineMath:[[\'$\',\'$\'],[\'$$\', \'$$\']],displayMath:[[\'\\\\[\',\'\\\\]\']],processEscapes:true},TeX:{extensions: [\'[Contrib]/xyjax/xypic.js\']}});MathJax.Hub.Startup.onload();';
 
         if (window.opera) script.innerHTML = config; else script.text = config;
 
